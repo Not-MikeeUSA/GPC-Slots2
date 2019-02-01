@@ -1272,14 +1272,6 @@ print color 'reset';
 	} elsif (($titlescreen eq 'decss') or ($titlescreen eq 'DECSS'))  {
 		newlines();
 		viewdecss();
-	} elsif (($titlescreen eq 'feminism') or ($titlescreen eq 'women')
-		or ($titlescreen eq 'women\'s rights') or ($titlescreen eq '19th ammendment')
-		or ($titlescreen eq 'women\'s vote')
-		or ($titlescreen eq 'FEMINISM') or ($titlescreen eq 'WOMEN')
-		or ($titlescreen eq 'WOMEN\'S RIGHTS') or ($titlescreen eq '19TH AMMENDMENT')
-		or ($titlescreen eq 'WOMEN\'S VOTE'))  {
-		newlines();	
-		nowomensrights();
 	} elsif (($titlescreen eq '-h') or ($titlescreen eq '--help') or ($titlescreen eq 'help') or ($titlescreen eq 'HELP') or ($titlescreen eq 'h') or ($titlescreen eq 'H')) {
 		newlines();
 		help();
@@ -1380,44 +1372,6 @@ print colored('leading bit is zero). Finally, view this string of bits as a sing
 print colored('                       do you get? This illegal prime!"                         ',"$boldyellow on_$bgcblack"); print"\n";
 print colored('  This number was found to be a probable prime by Charles M. Hannum and proven  ',"$boldblack on_$bgcblack"); print"\n";
 print colored('                              prime by Phil Carmody                             ',"$boldblack on_$bgcblack"); print"\n";
-print color 'black';
-	$placeholder = <STDIN>;
-	chomp($placeholder);
-	print color 'reset';
-	
-	return;
-}
-
-sub nowomensrights {
-print colored('>>>>ABEVTUGFSBEJBZRANYYYVOREGVRFSBEZRA>>>>ABEVTUGFSBEJBZRANYYYVOREGVRFSBEZRA>>>>',"$boldblack on_$bgcblack"); print"\n"; 
-print colored('Just Say No To Women\'s Rights                                                   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('    Just Say No To Women\'s Rights                                               ',"$red on_$bgcblack"); print"\n"; 
-print colored('        Just Say No To Women\'s Rights                                           ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('            Just Say No To Women\'s Rights                                       ',"$red on_$bgcblack"); print"\n"; 
-print colored('                Just Say No To Women\'s Rights                                   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                    Just Say No To Women\'s Rights                               ',"$red on_$bgcblack"); print"\n"; 
-print colored('                        Just Say No To Women\'s Rights                           ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                            Just Say No To Women\'s Rights                       ',"$red on_$bgcblack"); print"\n"; 
-print colored('                                Just Say No To Women\'s Rights                   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                                    Just Say No To Women\'s Rights               ',"$red on_$bgcblack"); print"\n"; 
-print colored('                                        Just Say No To Women\'s Rights           ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                                            Just Say No To Women\'s Rights       ',"$red on_$bgcblack"); print"\n"; 
-print colored('                                                Just Say No To Women\'s Rights   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                                                   Just Say No To Women\'s Rights',"$red on_$bgcblack"); print"\n"; 
-print colored('                                                Just Say No To Women\'s Rights   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                                            Just Say No To Women\'s Rights       ',"$red on_$bgcblack"); print"\n"; 
-print colored('                                        Just Say No To Women\'s Rights           ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                                    Just Say No To Women\'s Rights               ',"$red on_$bgcblack"); print"\n"; 
-print colored('                                Just Say No To Women\'s Rights                   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                            Just Say No To Women\'s Rights                       ',"$red on_$bgcblack"); print"\n"; 
-print colored('                        Just Say No To Women\'s Rights                           ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('                    Just Say No To Women\'s Rights                               ',"$red on_$bgcblack"); print"\n"; 
-print colored('                Just Say No To Women\'s Rights                                   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('            Just Say No To Women\'s Rights                                       ',"$red on_$bgcblack"); print"\n"; 
-print colored('        Just Say No To Women\'s Rights                                           ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('    Just Say No To Women\'s Rights                                               ',"$red on_$bgcblack"); print"\n"; 
-print colored('Just Say No To Women\'s Rights                                                   ',"$boldred on_$bgcblack"); print"\n"; 
-print colored('>>>>ABEVTUGFSBEJBZRANYYYVOREGVRFSBEZRA>>>>ABEVTUGFSBEJBZRANYYYVOREGVRFSBEZRA>>>>',"$boldblack on_$bgcblack"); print"\n"; 
 print color 'black';
 	$placeholder = <STDIN>;
 	chomp($placeholder);
