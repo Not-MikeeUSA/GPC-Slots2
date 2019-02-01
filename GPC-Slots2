@@ -25899,39 +25899,5 @@ sub exitgame {
 	if (($loadedsavefile == 1) && ($allowsave == 1)) {
 		printsavefile();
 	}
-	newlines();
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored("                  Thank  You  For  Playing  GPCSlots 2  v$version                  ","$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('       Author: MikeeUSA                                                         ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('     Web Site: https://cat2.dynu.ca  or  https://caethaver2.dynu.ca             ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('  IRC Channel: #linux  on  cat2.dynu.ca                                         ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('    Web Forum: https://cat2.dynu.ca/bb  or  https://caethaver2.dynu.ca/bb       ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('        Get The Newest Version At https://cat2.dynu.ca/cat2/gpcs2.html          ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('               Or At https://caethaver2.dynu.ca/cat2/gpcs2.html                 ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                  CAEthaver2                                    ',"$boldblue on_$bgcwhite"); print"\n"; 
-	print colored('                                                                                ',"$boldblue on_$bgcwhite"); print"\n"; 
 	exit();
 }
-
-#GPCSLOTS 2 by MikeeUSA
-#https://cat2.dynu.ca  or  https://caethaver2.dynu.ca
-#Feminism Delenda Est.
