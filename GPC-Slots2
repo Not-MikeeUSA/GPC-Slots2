@@ -167,15 +167,11 @@ $htmlgraphnums = 1; ##Have Graph Values       1 = Yes 0 = No
 
 $musicdir = '~/.gpcslots2/midi/';
 	#*Searches for the files in this directory
-@musicfiles = ('kc_32x_11.mid','s1_sg_11.mid','s3db_sg_19.mid','s3_sg_12.mid','s3_sg_31.mid','sa_gba_11.mid','scd_mcd_18.mid');
-	#*These are file names of the midi files I use on my system.
-	#*   They were sequenced by John Weeks (espiokaos.com).
-	#*I am looking for similar quality opensource(GPL,BSD,Debian Compatable Licensed)
-	#*   or public domain midis to bundle with this game.
-	#*Replace the array entries with songs you personally like. Jazzy Casino Music.
-@rrmusicfiles = ('onthemar.mid','czardas1.mid','tomnaya.mid');
+@musicfiles = ('music.mid');
+	#*I (Not-MikeeUSA) don't have any MIDI files :-(
+@rrmusicfiles = ('russia.mid');
 	#*These are file names of the midi files I use on my system for russian roulette. Russian Folk and Russian 19th Century Music.
-@bankmusicfiles = ('gp_v01.mid','gp_v02.mid','gp_v03.mid','gp_v04.mid','gp_v05.mid','gp_v06.mid','gp_v07.mid','gp_v08.mid','gp_v09.mid','gp_v10.mid','gp_v11.mid','gp_v12.mid');
+@bankmusicfiles = ('bank.mid');
 	#*These are file names of the midi files I use on my system for the bank. Classical Music (Vivaldi etc).	
 $musicplayer = 'timidity';
 	#*Midis sound great with freepats (http://freepats.opensrc.org) by Eric A. Welsh 
