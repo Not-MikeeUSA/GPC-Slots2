@@ -406,60 +406,6 @@ BEGIN {
 	}
 }
 
-BEGIN {
-	print"\n";
-	print'GPCSLOTS 2'; print"\n";
-	print' By The Entity Known As MikeeUSA'; print"\n";
-	print"\n";
-	print'This program is free software; you can redistribute it and/or'; print"\n";
-	print'modify it under the terms of the GNU General Public License'; print"\n";
-	print'as published by the Free Software Foundation; either version 2'; print"\n";
-	print'of the License, or (at your option) any later version.'; print"\n";
-	print"\n";
-	print'This program is distributed in the hope that it will be useful,'; print"\n";
-	print'but WITHOUT ANY WARRANTY; without even the implied warranty of'; print"\n";
-	print'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the'; print"\n";
-	print'GNU General Public License for more details.'; print"\n";
-	print"\n";
-	print'You should have received a copy of the GNU General Public License'; print"\n";
-	print'along with this program; if not, write to the Free Software'; print"\n";
-	print'Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.'; print"\n";
-	print"\n";
-	print'WWW: https://cat2.dynu.ca    '; print"\n";
-	print'IRC: cat2.dynu.ca  #linux    '; print"\n";
-	print"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-	print'	                                                                              '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                                                                '; print"\n";
-	print"$name"; print"\n";
-	print'                               GENERAL PUBLIC                                   '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                           SSSSSS     IIIIIIIIIII                               '; print"\n";
-	print'                         SSSSSSSSSS  IIIIIIIIIIIII                              '; print"\n";
-	print'                        SSSS    SSSS     IIIII                                  '; print"\n";
-	print'                  A     SSS              IIIII      NNNN     NNNNN              '; print"\n";
-	print'                 AAA    SSSS             IIIII      NNNNN     NNN               '; print"\n";
-	print'                AAAAA    SSSSSSSSS       IIIII      NNNNNN    NNN               '; print"\n";
-	print'               AAAAAAA    SSSSSSSSS      IIIII      NNNNNNN   NNN               '; print"\n";
-	print'    CCCCCC    AAAA AAAA         SSSS     IIIII      NNN NNNN  NNN     OOOOOOO   '; print"\n";
-	print'  CCCCCCCCCC  AAA   AAA          SSS     IIIII      NNN  NNNN NNN   OOOOOOOOOOO '; print"\n";
-	print' CCCC    CCCC AAAAAAAAA SSSS    SSSS     IIIII      NNN   NNNNNNN  OOOOO   OOOOO'; print"\n";
-	print' CCC          AAA   AAA  SSSSSSSSSS  IIIIIIIIIIIII  NNN    NNNNNN  OOOO     OOOO'; print"\n";
-	print' CCC          AAA   AAA    SSSSSS     IIIIIIIIIII   NNN     NNNNN  OOOO     OOOO'; print"\n";
-	print' CCCC    CCCC AAA   AAA                            NNNNN     NNNN  OOOOO   OOOOO'; print"\n";
-	print'  CCCCCCCCCC                                                        OOOOOOOOOOO '; print"\n";
-	print'    CCCCCC                                                            OOOOOOO   '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                 [LOADING]                                      '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                                                                '; print"\n";
-	print'                                                                                '; print"\n";
-}
-
 startup();
 
 sub startup {
