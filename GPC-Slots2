@@ -1029,7 +1029,7 @@ print colored(' CCCC    CCCC AAAAAAAAA SSSS    SSSS     IIIII      NNN   NNNNNNN
 print colored(' CCC          AAA   AAA  SSSSSSSSSS  IIIIIIIIIIIII  NNN    NNNNNN  OOOO     OOOO',"$titlecolor on_$bgcblack"); print"\n"; 
 print colored(' CCC          AAA   AAA    SSSSSS     IIIIIIIIIII   NNN     NNNNN  OOOO     OOOO',"bold $titlecolor on_$bgcblack"); print"\n"; 
 print colored(' CCCC    CCCC AAA   AAA                            NNNNN     NNNN  OOOOO   OOOOO',"$titlecolor on_$bgcblack"); print"\n"; 
-print colored('  CCCCCCCCCC                                                        OOOOOOOOOOO ',"bold $titlecolor on_$bgcblack"); print"\n"; 
+print colored('  CCCCCCCCCC            As Amended by Not-MikeeUSA                  OOOOOOOOOOO ',"bold $titlecolor on_$bgcblack"); print"\n"; 
 print colored('    CCCCCC                                                            OOOOOOO   ',"$titlecolor on_$bgcblack"); print"\n"; 
 print colored('                                                                                ',"$boldyellow on_$bgcblack"); print"\n"; 
 
@@ -1075,7 +1075,7 @@ print colored(" Expended Cash: $moneyexp                         ","$white on_$b
 print colored(" Expended Cash: $moneyexp                          ","$white on_$bgcred"); 
 }
 
-print colored("                      version $version   ","$boldblack on_$bgcblack"); print"\n"; 
+print colored("               version $version ","$boldblack on_$bgcblack"); print"\n"; 
 
 tokeneval();
 if ($coin > 9999999999999999999) {
