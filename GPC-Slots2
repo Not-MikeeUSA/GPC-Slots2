@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 #GPCSLOTS 2
 #  By The Entity Known As MikeeUSA
+#  enhanced by someone who is not known as MikeeUSA
 
 #This program is free software; you can redistribute it and/or
 #modify it under the terms of the GNU General Public License
@@ -466,7 +467,7 @@ sub startup {
 	testmusic();
 	beginmusic();
 	setslotrandnums();
-	$version = '0.4.5'; #0.4.5 in progress.
+	$version = '0.4.5-lessdumb'; #0.4.5 in progress.
 	$loadsavefile = 0;
 	$buff0 = '';	#Used Often
 	$buff1 = '';
@@ -757,7 +758,6 @@ sub colorset_normal {
 	$boldmagenta = 'bold magenta';	
 
 	$titlecolor = "$blue";
-	$decsscolor = "$green";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
 }
@@ -789,7 +789,6 @@ sub colorset_dull {
 	$boldmagenta = 'magenta';	
 
 	$titlecolor = "$blue";
-	$decsscolor = "$green";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
 }
@@ -821,7 +820,6 @@ sub colorset_bright {
 	$boldmagenta = 'bold magenta';	
 
 	$titlecolor = "$blue";
-	$decsscolor = "$green";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
 }
@@ -853,7 +851,6 @@ sub colorset_inverse {
 	$boldmagenta = 'bold green';	
 
 	$titlecolor = "$blue";
-	$decsscolor = "$green";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
 }
@@ -885,7 +882,6 @@ sub colorset_notld {
 	$boldmagenta = 'bold magenta';	
 
 	$titlecolor = "$blue";
-	$decsscolor = "$green";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
 }
@@ -917,7 +913,6 @@ sub colorset_lightsout {
 	$boldmagenta = 'bold magenta';
 			
 	$titlecolor = "$blue";
-	$decsscolor = "$green";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
 }
@@ -949,7 +944,6 @@ sub colorset_blackwhite {
 	$boldmagenta = 'bold white';		
 
 	$titlecolor = "$blue";
-	$decsscolor = "$green";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
 }
@@ -1269,9 +1263,6 @@ print color 'reset';
 		ccrapsmainspin2();					 			
 	} elsif (($titlescreen eq 'exit') or ($titlescreen eq 'EXIT') or ($titlescreen eq 'quit') or ($titlescreen eq 'QUIT')) {
 		exitgame();
-	} elsif (($titlescreen eq 'decss') or ($titlescreen eq 'DECSS'))  {
-		newlines();
-		viewdecss();
 	} elsif (($titlescreen eq '-h') or ($titlescreen eq '--help') or ($titlescreen eq 'help') or ($titlescreen eq 'HELP') or ($titlescreen eq 'h') or ($titlescreen eq 'H')) {
 		newlines();
 		help();
@@ -1338,44 +1329,6 @@ print color 'reset';
 		@ARGV = $titlescreen;
 		commandargs();
 	}
-	
-	return;
-}
-
-sub viewdecss {
-print colored('     BEHOLD ALL YEE WHOM ENTER! ILLEGAL PRIME NUMBER OF DECSS FROM EFDTT.C:     ',"$boldyellow on_$bgcblack"); print"\n"; 
-print colored('                                                                                ',"$boldyellow on_$bgcblack"); print"\n"; 
-print colored('                                                   9454 7005113906              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            4445500929 6776927869 3366458905 0222897871 4950867838              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            0500658547 1078776889 6313320081 6447475865 9031815003              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            9822306942 1701682469 8468953527 7506293328 0780994198              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            5641052653 3345462508 4314006874 6551409510 2042852544              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            1264820432 9860820006 7866922287 2721350789 7567520105              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            6069007944 6509850383 1481013904 8399479601 6226100635              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            3638384224 3246104161 3899207128 5187220887 2165636447              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            9923851594 8762313652 6386601309 8356062871 2571853106              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            5809023364 7322143645 8421842236 2536427009 5557239142              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            1165512411 2039883768 2243428924 2349301261 7418161246              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            3034415778 2839809597 6436852468 9078864161 4306545276              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            8956715245 9477708733 4644014469 5871931815 7608776778              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            2573341499 4188265086 0668841859 9672379789 3766678068              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            2566994676 0998769793 4508344702 2603175841 3304926144              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            6761328219 9729121409 9335596945 7407499011 1540914866              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            1355366182 1056035804 0014112275 1532956922 4393582188              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            9493881197 1105655941 1852982478 7238592254 0525772073              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('            4123557637 2341117844 3887252022 3019576406 0843081469              ',"$decsscolor on_$bgcblack"); print"\n";
-print colored('                                                                                ',"$boldyellow on_$bgcblack"); print"\n"; 
-print colored('"Suppose you were to take a variant of efdtt.c, a program that will allow you to',"$boldyellow on_$bgcblack"); print"\n";
-print colored('  play a DVD on a computer, and then convert each character in the code to its  ',"$boldyellow on_$bgcblack"); print"\n"; 
-print colored(' 7-bit ascii equivalent (the code contains standard characters, so the eight or ',"$boldyellow on_$bgcblack"); print"\n";
-print colored('leading bit is zero). Finally, view this string of bits as a single number. What',"$boldyellow on_$bgcblack"); print"\n"; 
-print colored('                       do you get? This illegal prime!"                         ',"$boldyellow on_$bgcblack"); print"\n";
-print colored('  This number was found to be a probable prime by Charles M. Hannum and proven  ',"$boldblack on_$bgcblack"); print"\n";
-print colored('                              prime by Phil Carmody                             ',"$boldblack on_$bgcblack"); print"\n";
-print color 'black';
-	$placeholder = <STDIN>;
-	chomp($placeholder);
-	print color 'reset';
 	
 	return;
 }
