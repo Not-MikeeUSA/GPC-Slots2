@@ -878,10 +878,14 @@ if ($allowhtml == 1) {
 }
 print"\n";
 print color 'white';
+
 	$titlescreen = <STDIN>;
 	chomp($titlescreen);
 print color 'reset';
-	if ($titlescreen == 1) {
+
+	if ($titlescreen == undef) {
+		exitgame();
+	} if ($titlescreen == 1) {
 		newlines();
 		main2();
 	} elsif ($titlescreen == 2) {
@@ -2171,6 +2175,10 @@ sub startinfo {
 	tokeneval();
 	$startinfo = <STDIN>;
 	chomp($startinfo);
+
+	if ($startinfo == undef) {
+		exitgame();
+	}
 	
 	if (($startinfo eq 'a') or ($startinfo eq 'A')) {
 		$startinfo = $hragaincmd;
@@ -12640,31 +12648,7 @@ sub ruskieroll2 {
 sub ruskieroll {
 	newlines();
 	
-	if ($animate == 1) {
-		ruskiespin();
-		$ruskie2rand = 42;
-		ruskietop();
-		ruskiemain();
-		ruskiebottom();
-		tinypause();
-		newlines();
-	
-		ruskiespin();
-		$ruskie2rand = 42;
-		ruskietop();
-		ruskiemain();
-		ruskiebottom();
-		tinypause();
-		newlines();
-		
-		ruskiespin();
-		$ruskie2rand = 42;
-		ruskietop();
-		ruskiemain();
-		ruskiebottom();
-		tinypause();
-		newlines();
-	
+	for ($i = 0; $animate && $i < 4; $i++) {
 		ruskiespin();
 		$ruskie2rand = 42;
 		ruskietop();
