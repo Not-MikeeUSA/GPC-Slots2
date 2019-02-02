@@ -144,16 +144,15 @@ use POSIX qw(floor);
 use IO::Handle;
 print color 'reset';
 
-my $compatVT100 = 1;   ##Enable VT100 Features:  1 = Yes 0 = No
-my $compatUNIXY = 1;   ##Enable *NIX Features:   1 = Yes 0 = No
-my $compatANSI = 1;    ##Enable ANSI Color:      1 = Yes 0 = No
-my $animate = 1;       ##Enable Animation:       1 = Yes 0 = No
-my $anispeed = 1;      ##Speed of Animation      1 = 1X  2 = 2X  3 = 3X
-my $soundfx = 1;       ##Enable (Beep) SoundFX:  1 = Yes 0 = No
-my $music = 0;         ##Enable Music:           1 = Yes 0 = No
-my $playtrack = 1;     ##Enable Play Tracker     1 = Yes 0 = No
-my $htmlgraphnums = 1; ##Have Graph Values       1 = Yes 0 = No
-                       ## printed Under Bargraph
+our $compatVT100 = 1;   ##Enable VT100 Features:  1 = Yes 0 = No
+our $compatUNIXY = 1;   ##Enable *NIX Features:   1 = Yes 0 = No
+our $animate = 1;       ##Enable Animation:       1 = Yes 0 = No
+our $anispeed = 1;      ##Speed of Animation      1 = 1X  2 = 2X  3 = 3X
+our $soundfx = 1;       ##Enable (Beep) SoundFX:  1 = Yes 0 = No
+our $music = 0;         ##Enable Music:           1 = Yes 0 = No
+our $playtrack = 1;     ##Enable Play Tracker     1 = Yes 0 = No
+our $htmlgraphnums = 1; ##Have Graph Values       1 = Yes 0 = No
+                        ## printed Under Bargraph
 
 ##To Disable Color ANSI on Windows(R) Uncomment the Following 5 Lines##
 #sub colored {
@@ -226,7 +225,7 @@ sub helpkeys {
 BEGIN {
 	Getopt::Long::GetOptions(
 		"help" => sub { Getopt::Long::HelpMessage() },
-		"nan|no-ansi" => sub { $compatANSI = 0; },
+		"nan|no-ansi" => sub { $ENV{ANSI_COLORS_DISABLED} = 1; },
 		"na|no-animation" => sub { $animate = 0; },
 		"nt|no-vt100" => sub { $compatVT100 = 0; },
 		"nu|no-unix" => sub { $compatUNIXY = 0; },
@@ -2243,9 +2242,11 @@ sub startinfo {
 sub newlines {
 	if ($compatVT100 == 1) {
 		print"\033[2J\n";
-	} else {
-		print"\n\n\n";
 	}
+
+	#} else {
+	#	print"\n\n\n";
+	#}
 }
 
 sub testmusic {
