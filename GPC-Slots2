@@ -2110,25 +2110,10 @@ sub main {
 	resethrvars();
 	spinreel();
 	reeltrans();
-	#print"$hrrandnums\n"; #<-- Used for testing purposes, keep commented out <--
+	
 	$x = "$svslot1"."$svslot2"."$svslot3";
 	
-	if ($animate == 1) {
-		$reelspin = 3;	
-		topscreen();
-		mainscreen();
-		displaywin();
-		smallpause();
-		newlines();
-		
-		$reelspin = 2;	
-		topscreen();
-		mainscreen();
-		displaywin();
-		smallpause();
-		newlines();
-		
-		$reelspin = 1;	
+	for ($reelspin = 3; $animate && $reelspin > 0; $reelspin--) {
 		topscreen();
 		mainscreen();
 		displaywin();
@@ -2152,7 +2137,7 @@ sub main2 {
 	reeltrans();
 	topscreen();
 	mainscreen();
-	##addmoney(); #no reason for this to be here, what was I thinking? Don't uncomment.
+	
 	resethrvars();
 		if ($startreel == 1) {
 			$startreel = 0;
@@ -4133,23 +4118,10 @@ sub ddmain {
 	ddspinreel();
 	ddreeltrans();
 	
-	if ($animate == 1) {
-		$ddreelspin = 3;
+	for ($ddreelspin = 3; $animate && $ddreelspin > 0; $ddreelspin--) {
 		ddtopprint();
 		ddmainscreen();
-		smallpause();
-		newlines();
-	
-		$ddreelspin = 2;
-		ddtopprint();
-		ddmainscreen();
-		tinypause();
-		newlines();
-	
-		$ddreelspin = 1;
-		ddtopprint();
-		ddmainscreen();
-		tinypause();
+		if ($ddreelspin == 3) { smallpause(); } else { tinypause(); }
 		newlines();
 	}
 	
@@ -5139,25 +5111,13 @@ sub ssmain {
 	ssspinreel();
 	ssreeltrans();
 	
-	if ($animate == 1) {
-		$ssreelspin = 3;
+	for ($ssreelspin = 3; $animate && $ssreelspin > 0; $ssreelspin--) {
 		ssmainscreen();
 		ssdisplaywin();
-		medpause();
-		newlines();
-	
-		$ssreelspin = 2;
-		ssmainscreen();
-		ssdisplaywin();
-		smallpause();
-		newlines();
-		
-		$ssreelspin = 1;
-		ssmainscreen();
-		ssdisplaywin();
-		smallpause();
+		if ($ssreelspin == 3) { medpause(); } else { smallpause(); }
 		newlines();
 	}	
+
 	$ssx1 = $sssvslot1.$sssvslot2.$sssvslot3;
 	$ssx2 = $sssvslot1a.$sssvslot2a.$sssvslot3a;
 	$ssx3 = $sssvslot1b.$sssvslot2b.$sssvslot3b;
