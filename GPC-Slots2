@@ -18,6 +18,8 @@
 #Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 package PrintWrapper;
+use Getopt::Long;
+use Pod::Usage;
 use IO::Handle;
 use strict;
 use warnings;
@@ -189,217 +191,60 @@ $musictermquiet = '> /dev/null';
 # Code Begins Here # 
 #------------------#
 
-sub help {
-			print"Animation Speed  :  1/$anispeed"; print"X     ANSI Color       :  $compatANSI\n";
-			print"Animation        :  $animate";  print"        Music            :  $music\n";
-			print"UNIX Features    :  $compatUNIXY"; print"        Terminal SoundFX :  $soundfx\n";
-			print"VT100 Features   :  $compatVT100\n";
-			print"Playtracking     :  $playtrack\n";
-			print'-h,   --help                  Display this help screen'; print"\n";
-			print'-k,   --keys                  Display keyboard commands information'; print"\n";
-			print'-nan, --no-ansi               Turn ANSI color off'; print"\n";
-			print'-an,  --ansi                  Turn ANSI color on (Default)'; print"\n";
-			print'-na,  --no-animation          Turn all animations off'; print"\n";
-			print'-a,   --animation             Turn all animations on (Default)'; print"\n";
-			print'-nt,  --no-vt100              Turn vt100 support off'; print"\n";
-			print'-t,   --vt100                 Turn vt100 support on (Default)'; print"\n";
-			print'-nu,  --no-unix               Turn unix specific code off'; print"\n";
-			print'-u,   --unix                  Turn unix specific code on (Default)'; print"\n";
-			print'-nsfx,--no-soundfx            Turn terminal (beep) soundfx off'; print"\n";
-			print'-sfx, --sounfx                Turn terminal (beep) soundfx on (Default)'; print"\n";
-			print'-nm,  --no-music              Turn music off (Default)'; print"\n";
-			print'-m,   --music                 Turn music on'; print"\n";
-			print'-npt, --no-playtracking      Turn playtracking off (Default)'; print"\n";
-			print'-pt,  --playtracking         Turn playtracking on (used for html graph)'; print"\n";
-			print'-as1, --animation-speed-1     Set animation speed to 1/1X (Default)'; print"\n";
-			print'-as2, --animation-speed-2     Set animation speed to 1/2X'; print"\n";
-			print'-as3, --animation-speed-3     Set animation speed to 1/3X'; print"\n";
-			print'      --name                  Change casino title name(not available in-game)'; print"\n";
-			print'      --gnome-terminal        Open in gnome-terminal(not available in-game)'; print"\n";
-			print'                              (Ex: gpcslots2 --gnome-terminal -m -nsfx )'; print"\n";
-			print'      --konsole               Open in konsole(not available in-game)'; print"\n";
-			print'                              (Ex: gpcslots2 --konsole -m -nsfx )'; print"\n";
-}
-
 sub helpkeys {
-			print'P             On Slotmachines: Enters a token or tokens and spins the reels'; print"\n";
-			print'              On Table Games: Rolls the dice or spins the roulette wheel'; print"\n";
-			print'              On Status Printout Machine: Prints game stats to a html file'; print"\n";
-			print'            Meaning: Play'; print"\n";
-			print'1P            On Slotmachines: Enters a token or tokens and spins the reels'; print"\n";
-			print'            Meaning: Play One'; print"\n";
-			print'2P,3P...8P    On Slotmachines: Enters tokens, selects multiple play lines,'; print"\n"; 
-			print'                               and then spins the reels'; print"\n";
-			print'            Meaning: Play Two, Play Three...Play Eight'; print"\n";
-			print"\n";
-			print'A             On Slotmachines: Executes the last entered valid command'; print"\n";
-			print'              On Table Games: Rolls the dice or spins the roulette wheel'; print"\n";
-			print'            Meaning: Again'; print"\n";
-			print'B             On Table Games: Set your bet'; print"\n";
-			print'            Meaning: Bet'; print"\n";
-			print'C             On Slotmachines: Returns to casino menu'; print"\n";
-			print'              On Table Games: Returns to casino menu'; print"\n";
-			print'              On Status Printout Machine: Returns to casino menu'; print"\n";
-			print'            Meaning: Casino Menu'; print"\n";
-			print'EXIT          On Slotmachines: Quits game'; print"\n";
-			print'              On Table Games: Quits game'; print"\n";
-			print'              On Status Printout Machine: Quits game'; print"\n";
-			print'              On Casino Menu: Quits game'; print"\n";
-			print'            Meaning: Exit game'; print"\n";
-			print'N             On Table Games: Select numbers to bet on'; print"\n";
-			print'            Meaning: Numbers'; print"\n";
-			print"\n";
-			print'1,2,3...10    On Casino Menu: Selects and enters a subgame'; print"\n";
-			print'            Meaning: Select Game One, Two, Three... Ten'; print"\n";
+	print'P             On Slotmachines: Enters a token or tokens and spins the reels'; print"\n";
+	print'              On Table Games: Rolls the dice or spins the roulette wheel'; print"\n";
+	print'              On Status Printout Machine: Prints game stats to a html file'; print"\n";
+	print'            Meaning: Play'; print"\n";
+	print'1P            On Slotmachines: Enters a token or tokens and spins the reels'; print"\n";
+	print'            Meaning: Play One'; print"\n";
+	print'2P,3P...8P    On Slotmachines: Enters tokens, selects multiple play lines,'; print"\n"; 
+	print'                               and then spins the reels'; print"\n";
+	print'            Meaning: Play Two, Play Three...Play Eight'; print"\n";
+	print"\n";
+	print'A             On Slotmachines: Executes the last entered valid command'; print"\n";
+	print'              On Table Games: Rolls the dice or spins the roulette wheel'; print"\n";
+	print'            Meaning: Again'; print"\n";
+	print'B             On Table Games: Set your bet'; print"\n";
+	print'            Meaning: Bet'; print"\n";
+	print'C             On Slotmachines: Returns to casino menu'; print"\n";
+	print'              On Table Games: Returns to casino menu'; print"\n";
+	print'              On Status Printout Machine: Returns to casino menu'; print"\n";
+	print'            Meaning: Casino Menu'; print"\n";
+	print'EXIT          On Slotmachines: Quits game'; print"\n";
+	print'              On Table Games: Quits game'; print"\n";
+	print'              On Status Printout Machine: Quits game'; print"\n";
+	print'              On Casino Menu: Quits game'; print"\n";
+	print'            Meaning: Exit game'; print"\n";
+	print'N             On Table Games: Select numbers to bet on'; print"\n";
+	print'            Meaning: Numbers'; print"\n";
+	print"\n";
+	print'1,2,3...10    On Casino Menu: Selects and enters a subgame'; print"\n";
+	print'            Meaning: Select Game One, Two, Three... Ten'; print"\n";
 }
 
 BEGIN {
-	if (@ARGV[0] eq '--gnome-terminal') {
-		$buff0 = '';
-		foreach(@ARGV) {
-			if (($_ ne '--gnome-terminal') and ($_ ne '--konsole')) {
-				$buff0 = "$buff0"." $_";
-			}
-		}
-		exec("gnome-terminal --hide-menubar --title=GPC-Slots2 --geometry=80x30 -x perl $0 $buff0");
-	} elsif (@ARGV[0] eq '--konsole') {
-		$buff0 = '';
-		foreach(@ARGV) {
-			if (($_ ne '--konsole') and ($_ ne '--gnome-terminal')) {
-				$buff0 = "$buff0"." $_";
-			}
-		}
-		exec("konsole --noresize --nohist --noscrollbar --notabbar --notoolbar --nomenubar --nohist --noframe --vt_sz 80x30 --T=GPC-Slots2 -e perl $0 $buff0");
-	} else {
-		foreach(@ARGV) {
-			if (($_ eq '-h') or ($_ eq '-help') or ($_ eq '--help')) {
-			print'GPCSLOTS 2'; print"\n";
-			print' By The Entity Known As MikeeUSA'; print"\n";
-			print"\n";
-			print'This program is free software; you can redistribute it and/or'; print"\n";
-			print'modify it under the terms of the GNU General Public License'; print"\n";
-			print'as published by the Free Software Foundation; either version 2'; print"\n";
-			print'of the License, or (at your option) any later version.'; print"\n";
-			print"\n";
-			print'This program is distributed in the hope that it will be useful,'; print"\n";
-			print'but WITHOUT ANY WARRANTY; without even the implied warranty of'; print"\n";
-			print'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the'; print"\n";
-			print'GNU General Public License for more details.'; print"\n";
-			print"\n";
-			print'You should have received a copy of the GNU General Public License'; print"\n";
-			print'along with this program; if not, write to the Free Software'; print"\n";
-			print'Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.'; print"\n";
-			print"\n";
-			print'WWW: https://cat2.dynu.ca    '; print"\n";
-			print'IRC: cat2.dynu.ca  #linux    '; print"\n\n";
-			print'Usage: gpcslots2 [options]'; print"\n";
-   			print'Where [options] are any of:'; print"\n";
-			print'-h,   --help                  Display this help screen'; print"\n";
-			print'-k,   --keys                  Display keyboard commands information'; print"\n";
-			print'-nan, --no-ansi               Turn ANSI color off'; print"\n";
-			print'-an,  --ansi                  Turn ANSI color on (Default)'; print"\n";
-			print'-na,  --no-animation          Turn all animations off'; print"\n";
-			print'-a,   --animation             Turn all animations on (Default)'; print"\n";
-			print'-nt,  --no-vt100              Turn vt100 support off'; print"\n";
-			print'-t,   --vt100                 Turn vt100 support on (Default)'; print"\n";
-			print'-nu,  --no-unix               Turn unix specific code off'; print"\n";
-			print'-u,   --unix                  Turn unix specific code on (Default)'; print"\n";
-			print'-nsfx,--no-soundfx            Turn terminal (beep) soundfx off'; print"\n";
-			print'-sfx, --sounfx                Turn terminal (beep) soundfx on (Default)'; print"\n";
-			print'-nm,  --no-music              Turn music off (Default)'; print"\n";
-			print'-m,   --music                 Turn music on'; print"\n";
-			print'-npt, --no-playtracking      Turn playtracking off (Default)'; print"\n";
-			print'-pt,  --playtracking         Turn playtracking on (used for html graph)'; print"\n";
-			print'-as1, --animation-speed-1     Set animation speed to 1/1X (Default)'; print"\n";
-			print'-as2, --animation-speed-2     Set animation speed to 1/2X'; print"\n";
-			print'-as3, --animation-speed-3     Set animation speed to 1/3X'; print"\n";
-			print'      --name                  Change casino title name(not available in-game)'; print"\n";
-			print'      --gnome-terminal        Open in gnome-terminal(not available in-game)'; print"\n";
-			print'                              (Ex: gpcslots2 --gnome-terminal -m -nsfx )'; print"\n";
-			print'      --konsole               Open in konsole(not available in-game)'; print"\n";
-			print'                              (Ex: gpcslots2 --konsole -m -nsfx )'; print"\n";
-			print'      --dual                  Seperate output of forground and background'; print"\n";
-			print'                              for use with Multi-Layer LCDs (not available in-game)'; print"\n";
+	Getopt::Long::GetOptions(
+		"help" => sub { Getopt::Long::HelpMessage() },
+		"nan|no-ansi" => sub { $compatANSI = 0; },
+		"na|no-animation" => sub { $animate = 0; },
+		"nt|no-vt100" => sub { $compatVT100 = 0; },
+		"nu|no-unix" => sub { $compatUNIXY = 0; },
+		"nsfx|no-soundfx" => sub { $soundfx = 0; },
+		"nm|no-music" => sub { $music = 0; },
+		"pt|playtracking" => sub { $playtrack = 1; },
+		"k|keys" => sub { helpkeys(); exit(); },
+	) or die ("Error in command line arguments\n");
 
-			exit();
-			} elsif (($_ eq '-k') or ($_ eq '-keys') or ($_ eq '--keys')) {
-			print'P             On Slotmachines: Enters a token or tokens and spins the reels'; print"\n";
-			print'              On Table Games: Rolls the dice or spins the roulette wheel'; print"\n";
-			print'              On Status Printout Machine: Prints game stats to a html file'; print"\n";
-			print'            Meaning: Play'; print"\n";
-			print'1P            On Slotmachines: Enters a token or tokens and spins the reels'; print"\n";
-			print'            Meaning: Play One'; print"\n";
-			print'2P,3P...8P    On Slotmachines: Enters tokens, selects multiple play lines,'; print"\n"; 
-			print'                               and then spins the reels'; print"\n";
-			print'            Meaning: Play Two, Play Three...Play Eight'; print"\n";
-			print"\n";
-			print'A             On Slotmachines: Executes the last entered valid command'; print"\n";
-			print'              On Table Games: Rolls the dice or spins the roulette wheel'; print"\n";
-			print'            Meaning: Again'; print"\n";
-			print'B             On Table Games: Set your bet'; print"\n";
-			print'            Meaning: Bet'; print"\n";
-			print'C             On Slotmachines: Returns to casino menu'; print"\n";
-			print'              On Table Games: Returns to casino menu'; print"\n";
-			print'              On Status Printout Machine: Returns to casino menu'; print"\n";
-			print'            Meaning: Casino Menu'; print"\n";
-			print'EXIT          On Slotmachines: Quits game'; print"\n";
-			print'              On Table Games: Quits game'; print"\n";
-			print'              On Status Printout Machine: Quits game'; print"\n";
-			print'              On Casino Menu: Quits game'; print"\n";
-			print'            Meaning: Exit game'; print"\n";
-			print'N             On Table Games: Select numbers to bet on'; print"\n";
-			print'            Meaning: Numbers'; print"\n";
-			print"\n";
-			print'1,2,3...10    On Casino Menu: Selects and enters a subgame'; print"\n";
-			print'            Meaning: Select Game One, Two, Three... Ten'; print"\n";
-			exit();
-			}
-			
-		}
-		$name = '                            WELCOME TO MIKEEUSA\'S                               ';
-		$namedeath = '                          YOU HAVE DIED IN MIKEEUSA\'S                           ';
-		$nametog = 0;
-		$buff0 = '';
-		foreach(@ARGV) {
-			if ($nametog == 1) {
-				$name = $_;
-				$name =~ s/[^a-zA-Z0-9_ \:\?\.\,\"\;\`\~\\\/\[\]\{\}\!\@\#\$\%\^\&\*\-\_\=\+\(\)]//g;
-				$namechars = 0;
-				
-				while ($name =~ /[a-zA-Z0-9_ \:\?\.\,\"\;\`\~\\\/\[\]\{\}\!\@\#\$\%\^\&\*\-\_\=\+\(\)]/g) {
-					$namechars = $namechars + 1;
-				}
-				
-				#Odd or even?
-				$buff0 = ($namechars/2);
-				($buff1, $buff0) = split(/./,$buff0, 2);
+	# print'-as1, --animation-speed-1     Set animation speed to 1/1X (Default)'; print"\n";
+	# print'-as2, --animation-speed-2     Set animation speed to 1/2X'; print"\n";
+	# print'-as3, --animation-speed-3     Set animation speed to 1/3X'; print"\n";
+	# print'      --name                  Change casino title name(not available in-game)'; print"\n";
+	# print'      --dual                  Seperate output of forground and background'; print"\n";
+	# print'                              for use with Multi-Layer LCDs (not available in-game)'; print"\n";
 
-				if ($buff0 == .5) {
-				#Odd Number
-				#Offsets ("38" "42") are not equal because the welcome and death screen text is not perfectly centered.
-					$buff0 = ' 'x(38 - (($namechars+1)/2));
-					$name = "$buff0"."$name";
-					$buff0 = ' 'x(42 - (($namechars-1)/2));
-					$name = "$name"."$buff0";
-				} else {
-				#Even Number
-				#Offsets ("38" "42") are not equal because the welcome and death screen text is not perfectly centered.
-					$buff0 = ' 'x(38 - ($namechars/2));
-					$buff1 = ' 'x(42 - ($namechars/2));
-					$name = "$buff0"."$name"."$buff1";
-					
-				}
-				
-				$namedeath = $name;
-				
-				$buff0 = '';
-				$buff1 = '';
-				$nametog = 0;
-			} elsif (($_ eq '--name') or ($_ eq '-name')) {
-				$nametog = 1;
-			}
-		}
-	}
+	$name = '                            WELCOME TO MIKEEUSA\'S                               ';
+	$namedeath = '                          YOU HAVE DIED IN MIKEEUSA\'S                           ';
 }
 
 startup();
@@ -25843,3 +25688,24 @@ sub exitgame {
 	}
 	exit();
 }
+
+__END__
+
+=head1 NAME
+
+GPC-Slots2 - General Public Casino Slots
+
+=head1 SYNOPSIS
+
+GPC-Slots2 [options]
+
+ Options:
+  --help		display help
+  --keys		display key summary
+  --no-ansi		disable ANSI stuff
+  --no-animation	disable animation
+  --no-vt100		disable VT100 stuff
+  --no-unix		disable UNIX stuff
+  --no-soundfx		disable sound effects
+  --no-music		disable music
+  --playtracking	enable playtracking
