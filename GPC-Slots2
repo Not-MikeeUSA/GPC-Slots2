@@ -144,16 +144,16 @@ use POSIX qw(floor);
 use IO::Handle;
 print color 'reset';
 
-$compatVT100 = 1;   ##Enable VT100 Features:  1 = Yes 0 = No
-$compatUNIXY = 1;   ##Enable *NIX Features:   1 = Yes 0 = No
-$compatANSI = 1;    ##Enable ANSI Color:      1 = Yes 0 = No
-$animate = 1;       ##Enable Animation:       1 = Yes 0 = No
-$anispeed = 1;      ##Speed of Animation      1 = 1X  2 = 2X  3 = 3X
-$soundfx = 1;       ##Enable (Beep) SoundFX:  1 = Yes 0 = No
-$music = 0;         ##Enable Music:           1 = Yes 0 = No
-$playtrack = 1;     ##Enable Play Tracker     1 = Yes 0 = No
-$htmlgraphnums = 1; ##Have Graph Values       1 = Yes 0 = No
-                    ## printed Under Bargraph
+my $compatVT100 = 1;   ##Enable VT100 Features:  1 = Yes 0 = No
+my $compatUNIXY = 1;   ##Enable *NIX Features:   1 = Yes 0 = No
+my $compatANSI = 1;    ##Enable ANSI Color:      1 = Yes 0 = No
+my $animate = 1;       ##Enable Animation:       1 = Yes 0 = No
+my $anispeed = 1;      ##Speed of Animation      1 = 1X  2 = 2X  3 = 3X
+my $soundfx = 1;       ##Enable (Beep) SoundFX:  1 = Yes 0 = No
+my $music = 0;         ##Enable Music:           1 = Yes 0 = No
+my $playtrack = 1;     ##Enable Play Tracker     1 = Yes 0 = No
+my $htmlgraphnums = 1; ##Have Graph Values       1 = Yes 0 = No
+                       ## printed Under Bargraph
 
 ##To Disable Color ANSI on Windows(R) Uncomment the Following 5 Lines##
 #sub colored {
@@ -483,7 +483,6 @@ sub startup {
 	}
 	$htmldivide = sprintf("%.0f", $htmldivide );
 	
-	commandargs();
 	computesverte();
 	if (($loadsavefile == 1) && ($allowsave == 1)) {
 		loadsavefile();
@@ -733,115 +732,6 @@ sub colorset_blackwhite {
 	$titlecolor = "$blue";
 	$sspx2 = "$boldgreen";
 	$sspx3 = "$boldgreen";
-}
-
-our $execution_of_commandargs;
-sub commandargs {
-	if(!$execution_of_commandargs)
-	{
-		$SEP = ''
-	}
-
-	foreach(@ARGV) {
-		if (($_ eq '-nan') or ($_ eq '--no-ansi')) {
-			if ($compatANSI != 0) {
-				$ENV{ANSI_COLORS_DISABLED} = 1;
-			}
-			$compatANSI = 0;	
-		}
-		
-		if (($_ eq '-an') or ($_ eq '--ansi')) {
-			if ($compatANSI != 1) {
-				delete $ENV{ANSI_COLORS_DISABLED};
-			}
-			$compatANSI = 1;
-		}
-		
-		if (($_ eq '-na') or ($_ eq '--no-animation')) {
-			$animate = 0;	
-		}
-		
-		if (($_ eq '-a') or ($_ eq '--animation')) {
-			$animate = 1;	
-		}
-		
-		if (($_ eq '-nt') or ($_ eq '--no-vt100')) {
-			$compatVT100 = 0;	
-		}
-		
-		if (($_ eq '-t') or ($_ eq '--vt100')) {
-			$compatVT100 = 1;	
-		}
-		
-		if (($_ eq '-nu') or ($_ eq '--no-unix')) {
-			$compatUNIXY = 0;	
-		}
-		
-		if (($_ eq '-u') or ($_ eq '--unix')) {
-			$compatUNIXY = 1;	
-		}
-		
-		if (($_ eq '-nsfx') or ($_ eq '--no-soundfx')) {
-			$soundfx = 0;	
-		}
-		
-		if (($_ eq '-2') or ($_ eq '--dual')) {
-			$SEP = "\377" if !$execution_of_commandargs;
-		}
-		
-		if (($_ eq '-sfx') or ($_ eq '--soundfx')) {
-			$soundfx = 1;	
-		}
-		
-		if (($_ eq '-npt') or ($_ eq '--no-playtracking')) {
-			$playtrack = 0;	
-		}
-		
-		if (($_ eq '-pt') or ($_ eq '--playtracking')) {
-			$playtrack = 1;	
-		}
-		
-		if (($_ eq '-nm') or ($_ eq '--no-music')) {
-			if ($music == 1) {
-				killmusic();
-				$music = 0;
-			} else {
-				$music = 0;
-			}	
-		}
-		
-		if (($_ eq '-m') or ($_ eq '--music')) {
-			if ($music == 0) {
-				$music = 1;
-				testmusic();
-				beginmusic();
-			} else {
-				$music = 1;
-			}	
-		}				
-		
-		if (($_ eq '-as1') or ($_ eq '--animation-speed-1')) {
-			$anispeed = 1;	
-		}
-		
-		if (($_ eq '-as2') or ($_ eq '--animation-speed-2')) {
-			$anispeed = 2;	
-		}
-		
-		if (($_ eq '-as3') or ($_ eq '--animation-speed-3')) {
-			$anispeed = 3;	
-		}
-		
-		if (($_ eq '-l') or ($_ eq '--load-savefile')) {
-			$loadsavefile = 1;	
-		}
-	}
-
-	if(!$execution_of_commandargs and $SEP ne '')
-	{
-		binmode STDOUT, ':via(PrintWrapper)';
-	}
-	$execution_of_commandargs = 1;
 }
 
 sub titlemain {
@@ -1114,7 +1004,6 @@ print color 'reset';
 		colorset_notld();
 	} else {
 		@ARGV = $titlescreen;
-		commandargs();
 	}
 	
 	return;
@@ -2355,7 +2244,7 @@ sub newlines {
 	if ($compatVT100 == 1) {
 		print"\033[2J\n";
 	} else {
-		print"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";	
+		print"\n\n\n";
 	}
 }
 
