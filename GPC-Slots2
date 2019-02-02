@@ -2346,13 +2346,7 @@ sub beepalrm {
 
 sub medpause {
 	if ($compatUNIXY == 1) {
-		if ($anispeed == 3) {
-			select undef, undef, undef, 1.80;
-		} elsif ($anispeed == 2) {
-			select undef, undef, undef, 1.20;
-		} else {
-			select undef, undef, undef, 0.60;
-		}
+		select undef, undef, undef, (0.6 * $anispeed);
 	} else {
 		sleep(1);
 	}
@@ -2360,13 +2354,7 @@ sub medpause {
 
 sub smallpause {
 	if ($compatUNIXY == 1) {
-		if ($anispeed == 3) {
-			select undef, undef, undef, 0.90;
-		} elsif ($anispeed == 2) {
-			select undef, undef, undef, 0.60;
-		} else {
-			select undef, undef, undef, 0.30;
-		}
+		select undef, undef, undef, (0.30 * $anispeed);
 	} else {
 		sleep(1);
 	}
@@ -2374,13 +2362,7 @@ sub smallpause {
 
 sub tinypause {
 	if ($compatUNIXY == 1) {
-		if ($anispeed == 3) {
-			select undef, undef, undef, 0.45;
-		} elsif ($anispeed == 2) {
-			select undef, undef, undef, 0.30;
-		} else {
-			select undef, undef, undef, 0.15;
-		}
+		select undef, undef, undef, (0.15 * $anispeed);
 	} else {
 		sleep(1);
 	}
@@ -2388,13 +2370,7 @@ sub tinypause {
 
 sub p7pause {
 	if ($compatUNIXY == 1) {
-		if ($anispeed == 3) {
-			select undef, undef, undef, 0.21;
-		} elsif ($anispeed == 2) {
-			select undef, undef, undef, 0.14;
-		} else {
-			select undef, undef, undef, 0.07;
-		}
+		select undef, undef, undef, (0.07 * $anispeed);
 	} else {
 		sleep(0);
 	}
@@ -2402,13 +2378,7 @@ sub p7pause {
 
 sub p4pause {
 	if ($compatUNIXY == 1) {
-		if ($anispeed == 3) {
-			select undef, undef, undef, 0.12;
-		} elsif ($anispeed == 2) {
-			select undef, undef, undef, 0.08;
-		} else {
-			select undef, undef, undef, 0.04;
-		}
+		select undef, undef, undef, (0.04 * anispeed);
 	} else {
 		sleep(0);
 	}
