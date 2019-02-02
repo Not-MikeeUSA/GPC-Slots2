@@ -12800,140 +12800,44 @@ sub lvrmainspin1 {
 	lvrreset();
 	lvrcolorsg();
 	
-	if ($animate == 1) {
-		$lvrreelspin = 2;
+	if ($animate) {
+		for ($i = 0; $i < 8; $i++) {
+			lvrstdcomp();
+			lvrspin();
+			lvrwheel();
+			lvrprintmain();
+			p4pause();
+			newlines();
+		}
 		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
+		for ($i = 0; $i < 3; $i++) {
+			lvrstdcomp();
+			lvrspin();
+			lvrwheel();
+			lvrprintmain();
+			p7pause();
+			newlines();
+		}
 		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p4pause();
-		newlines();
-		
-		
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p7pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p7pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p7pause();
-		newlines();
 		$lvrreelspin = 1;
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p7pause();
-		newlines();
+
+		for ($i = 0; $i < 4; $i++) {
+			lvrstdcomp();
+			lvrspin();
+			lvrwheel();
+			lvrprintmain();
+			p7pause();
+			newlines();
+		}
 		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p7pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p7pause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		p7pause();
-		newlines();
-		
-		
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		tinypause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		tinypause();
-		newlines();
-		
-		lvrstdcomp();
-		lvrspin();
-		lvrwheel();
-		lvrprintmain();
-		tinypause();
-		newlines();
-		
-		
+		for ($i = 0; $i < 4; $i++) {
+			lvrstdcomp();
+			lvrspin();
+			lvrwheel();
+			lvrprintmain();
+			tinypause();
+			newlines();
+		}
 				
 		lvrstdcomp();
 		lvrspin();
@@ -12941,9 +12845,8 @@ sub lvrmainspin1 {
 		lvrprintmain();
 		smallpause();
 		newlines();
-		
-		
 	}
+
 	$lvrreelspin = 0;
 	lvrstdcomp();
 	lvrspin();
